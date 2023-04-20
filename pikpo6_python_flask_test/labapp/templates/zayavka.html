@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>			
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}"> {{ msg }}</div>
+{% endfor %}
+            <center> <p class = "text_white">Составление заявки</p></center>
+	                <form class="form" action="" method="post">
+
+		                <input class="input" name ="number"type="text" placeholder="Введите номер телефона">
+		                <input class="input" name="email" type="e-mail" placeholder="Введите e-mail">
+                        <input class="input" name="ID" type="ID" placeholder="Введите ID автомобиля">
+		                <button class="btn">Оставить заявку</button>
+	                </form>
+</html>
+{% endblock %}

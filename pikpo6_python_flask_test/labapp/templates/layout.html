@@ -1,0 +1,49 @@
+<html>
+
+<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="/static/stylesheets/styles.css">
+		<script type="text/javascript" src="/static/javascripts/jquery-3.6.0.min.js"></script>
+</head>
+		<body>
+
+			<div class="container">
+				<header1>
+					<div></div>
+					<div></div>
+						<h1>Подбор автомобиля с пробегом</h1>
+						{%if name%}
+						<button class="link1" onclick="exit()" >Выход</button>
+						{%else%}		
+						<a class="link1" href="registr.html">Авторизация</a>
+						{%endif%}
+				</header1>
+			</div>
+			<div class = "wrapper">	
+				{% if navmenu %}
+					<nav>
+						<center>
+							<a class="link1" href="index.html">Главная</a>
+							<a class="link1" href="about.html">О проекте</a>
+							<a class="link1" href="zayavka.html">Составление заявки</a>
+						</center>
+					</nav>
+				{% endif %}
+					
+				<main id="{{page_name}}">
+					{% block content %}{% endblock %}
+				</main>
+			</div>			
+			<script type="text/javascript" src="/static/javascripts/topmenu.js"></script>
+			<script type="text/javascript" src="/static/javascripts/jqfunc.js"></script>
+		</body>
+</html>
+
+<script>
+	function exit()
+	{
+		document.cookie = "auth" + "=" + "";
+		window.location = "/avtoriz.html"
+	}
+</script>	

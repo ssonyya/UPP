@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main>
+    <aside>
+        <h2>Категории</h2>
+        <nav>
+            <form method="post" action="/">
+                <label class="checkbox style-e">
+                    <input type="checkbox" name="price_category" value="Эконом-класс">
+                    <div class="checkbox__checkmark"></div>
+                    <div class="checkbox__body">Эконом-класс</div>
+                </label>
+                <label class="checkbox style-e">
+                    <input type="checkbox" name="price_category" value="Средний-класс">
+                    <div class="checkbox__checkmark"></div>
+                    <div class="checkbox__body">Средний-класс</div>
+                </label>
+                <label class="checkbox style-e">
+                    <input type="checkbox" name="price_category" value="Люкс-класс">
+                    <div class="checkbox__checkmark"></div>
+                    <div class="checkbox__body">Люкс-класс</div>
+                </label>
+
+        </nav>
+
+        <h3>Год выпуска</h3>
+        <nav>
+
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="year" value="до 2010">
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body">до 2010</div>
+            </label>
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="year" value="2010+">
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body">2010+</div>
+            </label>
+
+        </nav>
+
+        <h3>Пробег</h3>
+        <nav>
+
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="km" value="до 100.000км">
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body">до 100.000км</div>
+            </label>
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="km" value="100.000км+">
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body">100.000км+</div>
+            </label>
+
+
+        </nav>
+
+        <h3>Сортировать по</h3>
+        <nav>
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="sort" value="Возрастанию цены" >
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body">Возрастанию цены</div>
+            </label>
+            <label class="checkbox style-e">
+                <input type="checkbox" / name="sort" value="  Убыванию цены   ">
+                <div class="checkbox__checkmark"></div>
+                <div class="checkbox__body"> Убыванию цены </div>
+
+            </label>
+            <p><input type="submit" name="btn_filter" value="Cделать запрос"></p>
+            </form>
+        </nav>
+
+    </aside>
+    <article>
+        <section>    
+            <div class="scroll-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ИД</th>
+                            <th>Название</th>
+                            <th>Год выпуска</th>
+                            <th>Пробег</th>
+                            <th>Цена</th>
+                            <th>Категория автомобиля</th>
+                        </tr>
+                    </thead>
+                </table>
+            
+            
+                <div class="scroll-table-body">
+                    <table>
+                        <tbody>
+                            {% for row in processed_data %}
+                            <tr>
+                                <td>{{row[0]}}</td>
+                                <td>{{row[1]}}</td>
+                                <td>{{row[2]}}</td>
+                                <td>{{row[3]}}</td>
+                                <td>{{row[4]}}</td>
+                                <td>{{row[5]}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>	
+            </div>
+    
+        </section>
+    </article>
+</main>
+{% endblock %}

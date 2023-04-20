@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+	{% for cat, msg in get_flashed_messages(True) %}
+	<div class="flash {{cat}}"> {{ msg }}</div>
+	{% endfor %}
+<div class="section__auth">
+	<form class="form" action="" method="post">
+		<input class="input" type="text" name="log" placeholder="Введите логин">
+		<input class="input" type="password" name="pass" placeholder="Введите пароль">
+		<button class="btn">Войти</button>
+
+	</form>
+</div>
+{% endblock %}

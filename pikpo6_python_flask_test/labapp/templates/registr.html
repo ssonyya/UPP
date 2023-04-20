@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}"> {{ msg }}</div>
+{% endfor %}
+<div class="section__auth">
+	<form class="form" action="" method="post">
+		<input class="input" type="text" name="name" placeholder="Ваше имя">
+		<input class="input" type="text" name="login" placeholder="Ваш логин">
+		<input class="input" type="password" name="psw" placeholder="Пароль">
+		<input class="input" type="password" name="psw2" placeholder="Пароль еще раз">
+		<button class="btn" type="submit" value = "registr">Регистрация</button>
+		<center> 
+		<pr>Уже зарегистрированы?</pr>
+		</center>
+		<a class="btnn" href="avtoriz.html">Войти</a>
+		
+	  </form>	
+</div>
+
+		
+{% endblock %}
